@@ -1,0 +1,576 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_NEUTRAL
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT_DIALOG DIALOGEX 0, 0, 276, 73
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,105,52,50,14
+    LTEXT           "原始项目：",IDC_STATIC,7,15,41,8
+    CONTROL         "https://sourceforge.net/projects/raw-yuvplayer/",IDC_MFCLINK1,
+                    "MfcLink",WS_TABSTOP,60,14,200,14
+    LTEXT           "雷霄骅修改：",IDC_STATIC,7,32,53,8
+    CONTROL         "http://blog.csdn.net/leixiaohua1020",IDC_MFCLINK2,
+                    "MfcLink",WS_TABSTOP,60,30,198,14
+END
+
+IDD_CUSTOM_SIZE DIALOGEX 0, 0, 78, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "自定义宽高"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,14,41,52,14
+    EDITTEXT        IDC_WIDTH,31,4,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_HEIGHT,31,23,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "宽",IDC_STATIC,8,9,20,9
+    LTEXT           "高",IDC_STATIC,7,25,9,8
+END
+
+IDD_GO_DIALOG DIALOGEX 0, 0, 119, 26
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | DS_CENTERMOUSE | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "GO",IDOK,87,7,25,12
+    EDITTEXT        IDC_FRAME_NO,41,7,45,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "帧序号",IDC_STATIC,7,8,33,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "打开",                          ID_OPEN
+        MENUITEM "重新加载",                        ID_FILE_RELOAD
+        MENUITEM "跳转到帧",                        ID_FILE_GO
+        MENUITEM "退出",                          ID_FILE_EXIT
+    END
+    POPUP "分辨率"
+    BEGIN
+        MENUITEM "1080P (1920x1080)",           ID_SIZE_HD
+        MENUITEM "720P  (1280x720)",            ID_SIZE_SD
+        MENUITEM "&VGA   (640x480)",            ID_SIZE_VGA
+        MENUITEM SEPARATOR
+        MENUITEM "&WVGA   (832x480)",           ID_SIZE_WVGA
+        MENUITEM "WQVGA (416x240)",             ID_SIZE_WQVGA
+        MENUITEM SEPARATOR
+        MENUITEM "&CIF      (352x288)",         ID_SIZE_CIF, CHECKED
+        MENUITEM "&QCIF    (176x144)",          ID_SIZE_QCIF
+        MENUITEM "SMALL (192x256)",             ID_SIZE_192X256
+        MENUITEM SEPARATOR
+        MENUITEM "自定义",                         ID_SIZE_CUSTOM
+    END
+    POPUP "像素格式"
+    BEGIN
+        MENUITEM "YUV420 10bitLE",              ID_COLOR_YUV420_10LE
+        MENUITEM "YUV420 10bitBE",              ID_COLOR_YUV420_10BE
+        MENUITEM SEPARATOR
+        MENUITEM "YUV&444",                     ID_COLOR_YUV444
+        MENUITEM "YUV4&22",                     ID_COLOR_YUV422
+        MENUITEM "YUV42&0",                     ID_COLOR_YUV420, CHECKED
+        MENUITEM "&Y",                          ID_COLOR_Y
+        MENUITEM SEPARATOR
+        MENUITEM "YUV",                         ID_COLOR_PACKEDYUV444
+        MENUITEM "&UYVY",                       ID_COLOR_UYVY
+        MENUITEM "YUY&V",                       ID_COLOR_YUYV
+        MENUITEM "NV12",                        ID_COLOR_NV12
+        MENUITEM "NV21",                        ID_COLOR_NV21
+        MENUITEM SEPARATOR
+        MENUITEM "RGB32",                       ID_COLOR_RGB32
+        MENUITEM "RGB24",                       ID_COLOR_RGB24
+        MENUITEM "RGB16",                       ID_COLOR_RGB16
+    END
+    POPUP "缩放"
+    BEGIN
+        MENUITEM "8:1",                         ID_ZOOM_81
+        MENUITEM "&4:1",                        ID_ZOOM_41
+        MENUITEM "&2:1",                        ID_ZOOM_21
+        MENUITEM "&1:1",                        ID_ZOOM_11, CHECKED
+        MENUITEM "1:2",                         ID_ZOOM_12
+        MENUITEM "1:4",                         ID_ZOOM_14
+    END
+    POPUP "分块"
+    BEGIN
+        MENUITEM "64x64 (RED)",                 ID_SEGMENT_64X64
+        MENUITEM "32x32 (GREEN)",               ID_SEGMENT_32X32
+        MENUITEM "16x16 (BLUE)",                ID_SEGMENT_16X16
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "关于",                          ID_HELP_ABOUT
+    END
+END
+
+IDR_CMENU MENU
+BEGIN
+    POPUP "ContextMenu"
+    BEGIN
+        MENUITEM "保存 Y",                        ID_CMENU_SAVE_LUMINANCE
+        MENUITEM "保存 YUV444",                   ID_CMENU_SAVE_YUV444
+        MENUITEM "保存 YUV422",                   ID_CMENU_SAVE_YUV422
+        MENUITEM "保存 YUV420",                   ID_CMENU_SAVE_YUV420
+        MENUITEM "保存 RGB",                      ID_CMENU_SAVE_RGB
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 269
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_CUSTOM_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 71
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_GO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 112
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 19
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ABOUT_DIALOG DLGINIT
+BEGIN
+    IDC_MFCLINK1, 0x37c, 204, 0
+0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x683e, 0x7474, 0x7370, 
+0x2f3a, 0x732f, 0x756f, 0x6372, 0x6665, 0x726f, 0x6567, 0x6e2e, 0x7465, 
+0x702f, 0x6f72, 0x656a, 0x7463, 0x2f73, 0x6172, 0x2d77, 0x7579, 0x7076, 
+0x616c, 0x6579, 0x2f72, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x7255, 
+0x3e6c, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x7250, 0x6665, 
+0x7869, 0x3c3e, 0x4d2f, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x7250, 
+0x6665, 0x7869, 0x3c3e, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x6f54, 0x6c6f, 
+0x6974, 0x3e70, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x6f54, 0x6c6f, 
+0x6974, 0x3e70, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x465f, 0x6c75, 0x546c, 
+0x7865, 0x5474, 0x6f6f, 0x746c, 0x7069, 0x463e, 0x4c41, 0x4553, 0x2f3c, 
+0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x7546, 0x6c6c, 0x6554, 0x7478, 0x6f54, 
+0x6c6f, 0x6974, 0x3e70, 
+    IDC_MFCLINK2, 0x37c, 192, 0
+0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x683e, 0x7474, 0x3a70, 
+0x2f2f, 0x6c62, 0x676f, 0x632e, 0x6473, 0x2e6e, 0x656e, 0x2f74, 0x656c, 
+0x7869, 0x6169, 0x686f, 0x6175, 0x3031, 0x3032, 0x2f3c, 0x464d, 0x4c43, 
+0x6e69, 0x5f6b, 0x7255, 0x3e6c, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 
+0x6c72, 0x7250, 0x6665, 0x7869, 0x3c3e, 0x4d2f, 0x4346, 0x694c, 0x6b6e, 
+0x555f, 0x6c72, 0x7250, 0x6665, 0x7869, 0x3c3e, 0x464d, 0x4c43, 0x6e69, 
+0x5f6b, 0x6f54, 0x6c6f, 0x6974, 0x3e70, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 
+0x5f6b, 0x6f54, 0x6c6f, 0x6974, 0x3e70, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 
+0x465f, 0x6c75, 0x546c, 0x7865, 0x5474, 0x6f6f, 0x746c, 0x7069, 0x463e, 
+0x4c41, 0x4553, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x7546, 0x6c6c, 
+0x6554, 0x7478, 0x6f54, 0x6c6f, 0x6974, 0x3e70, 
+    0
+END
+
+#endif    // 中文(简体) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 朝鲜语(韩国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#include ""res\\yuvplayer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 朝鲜语(韩国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语(美国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_YUVPLAYER_DIALOG DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "YUVplayer"
+MENU IDR_MAIN_MENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "OPEN",IDC_OPEN,"Button",BS_OWNERDRAW | WS_TABSTOP,0,186,23,14
+    CONTROL         "REWIND",IDC_REWIND,"Button",BS_OWNERDRAW | WS_TABSTOP,23,186,23,14
+    CONTROL         "PLAY",IDC_PLAY,"Button",BS_OWNERDRAW | WS_TABSTOP,46,186,23,14
+    CONTROL         "STOP",IDC_STOP,"Button",BS_OWNERDRAW | WS_TABSTOP,69,186,23,14
+    CONTROL         "FFORWARD",IDC_FFORWARD,"Button",BS_OWNERDRAW | WS_TABSTOP,92,186,23,14
+    CONTROL         "",IDC_SLIDER,"msctls_trackbar32",TBS_TOP | TBS_NOTICKS | WS_TABSTOP,116,186,204,13
+    CONTROL         "",IDC_VIEW,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,0,0,319,184
+END
+
+IDD_CUSTOM_SIZE DIALOGEX 0, 0, 78, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Custom Size"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,14,41,52,14
+    EDITTEXT        IDC_WIDTH,31,4,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_HEIGHT,31,23,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Width",IDC_STATIC,8,9,20,9
+    LTEXT           "Height",IDC_STATIC,7,25,22,8
+END
+
+IDD_GO_DIALOG DIALOGEX 0, 0, 119, 26
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | DS_CENTERMOUSE | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "GO",IDOK,87,7,25,12
+    EDITTEXT        IDC_FRAME_NO,41,7,45,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Frame No",IDC_STATIC,7,8,33,10
+END
+
+IDD_ABOUT_DIALOG DIALOGEX 0, 0, 276, 73
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,105,52,50,14
+    LTEXT           "Original Project:",IDC_STATIC,7,16,52,8
+    CONTROL         "https://sourceforge.net/projects/raw-yuvplayer/",IDC_MFCLINK1,
+                    "MfcLink",WS_TABSTOP,67,15,202,14
+    LTEXT           "Modified By Lei Xiaohua:",IDC_STATIC,7,31,80,8
+    CONTROL         "http://blog.csdn.net/leixiaohua1020",IDC_MFCLINK2,
+                    "MfcLink",WS_TABSTOP,113,30,149,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open",                       ID_OPEN
+        MENUITEM "&Reload",                     ID_FILE_RELOAD
+        MENUITEM "&Go",                         ID_FILE_GO
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&Size"
+    BEGIN
+        MENUITEM "1080P (1920x1080)",           ID_SIZE_HD
+        MENUITEM "720P  (1280x720)",            ID_SIZE_SD
+        MENUITEM "&VGA   (640x480)",            ID_SIZE_VGA
+        MENUITEM SEPARATOR
+        MENUITEM "&WVGA   (832x480)",           ID_SIZE_WVGA
+        MENUITEM "WQVGA (416x240)",             ID_SIZE_WQVGA
+        MENUITEM SEPARATOR
+        MENUITEM "&CIF      (352x288)",         ID_SIZE_CIF, CHECKED
+        MENUITEM "&QCIF    (176x144)",          ID_SIZE_QCIF
+        MENUITEM "SMALL (192x256)",             ID_SIZE_192X256
+        MENUITEM SEPARATOR
+        MENUITEM "C&ustom",                     ID_SIZE_CUSTOM
+    END
+    POPUP "&Format"
+    BEGIN
+        MENUITEM "YUV420 10bitLE",              ID_COLOR_YUV420_10LE
+        MENUITEM "YUV420 10bitBE",              ID_COLOR_YUV420_10BE
+        MENUITEM SEPARATOR
+        MENUITEM "YUV&444",                     ID_COLOR_YUV444
+        MENUITEM "YUV4&22",                     ID_COLOR_YUV422
+        MENUITEM "YUV42&0",                     ID_COLOR_YUV420, CHECKED
+        MENUITEM "&Y",                          ID_COLOR_Y
+        MENUITEM SEPARATOR
+        MENUITEM "YUV",                         ID_COLOR_PACKEDYUV444
+        MENUITEM "&UYVY",                       ID_COLOR_UYVY
+        MENUITEM "YUY&V",                       ID_COLOR_YUYV
+        MENUITEM "NV12",                        ID_COLOR_NV12
+        MENUITEM "NV21",                        ID_COLOR_NV21
+        MENUITEM SEPARATOR
+        MENUITEM "RGB32",                       ID_COLOR_RGB32
+        MENUITEM "RGB24",                       ID_COLOR_RGB24
+        MENUITEM "RGB16",                       ID_COLOR_RGB16
+    END
+    POPUP "&Zoom"
+    BEGIN
+        MENUITEM "8:1",                         ID_ZOOM_81
+        MENUITEM "&4:1",                        ID_ZOOM_41
+        MENUITEM "&2:1",                        ID_ZOOM_21
+        MENUITEM "&1:1",                        ID_ZOOM_11, CHECKED
+        MENUITEM "1:2",                         ID_ZOOM_12
+        MENUITEM "1:4",                         ID_ZOOM_14
+    END
+    POPUP "Segment"
+    BEGIN
+        MENUITEM "64x64 (RED)",                 ID_SEGMENT_64X64
+        MENUITEM "32x32 (GREEN)",               ID_SEGMENT_32X32
+        MENUITEM "16x16 (BLUE)",                ID_SEGMENT_16X16
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About",                       ID_HELP_ABOUT
+    END
+END
+
+IDR_CMENU MENU
+BEGIN
+    POPUP "ContextMenu"
+    BEGIN
+        MENUITEM "Save Luminance",              ID_CMENU_SAVE_LUMINANCE
+        MENUITEM "Save YUV444",                 ID_CMENU_SAVE_YUV444
+        MENUITEM "Save YUV422",                 ID_CMENU_SAVE_YUV422
+        MENUITEM "Save YUV420",                 ID_CMENU_SAVE_YUV420
+        MENUITEM "Save RGB",                    ID_CMENU_SAVE_RGB
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_YUVPLAYER_DIALOG, DIALOG
+    BEGIN
+    END
+
+    IDD_CUSTOM_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 71
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_GO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 112
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 19
+    END
+
+    IDD_ABOUT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 269
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ABOUT_DIALOG DLGINIT
+BEGIN
+    IDC_MFCLINK1, 0x37c, 204, 0
+0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x683e, 0x7474, 0x7370, 
+0x2f3a, 0x732f, 0x756f, 0x6372, 0x6665, 0x726f, 0x6567, 0x6e2e, 0x7465, 
+0x702f, 0x6f72, 0x656a, 0x7463, 0x2f73, 0x6172, 0x2d77, 0x7579, 0x7076, 
+0x616c, 0x6579, 0x2f72, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x7255, 
+0x3e6c, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x7250, 0x6665, 
+0x7869, 0x3c3e, 0x4d2f, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x7250, 
+0x6665, 0x7869, 0x3c3e, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x6f54, 0x6c6f, 
+0x6974, 0x3e70, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x6f54, 0x6c6f, 
+0x6974, 0x3e70, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x465f, 0x6c75, 0x546c, 
+0x7865, 0x5474, 0x6f6f, 0x746c, 0x7069, 0x463e, 0x4c41, 0x4553, 0x2f3c, 
+0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x7546, 0x6c6c, 0x6554, 0x7478, 0x6f54, 
+0x6c6f, 0x6974, 0x3e70, 
+    IDC_MFCLINK2, 0x37c, 192, 0
+0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x683e, 0x7474, 0x3a70, 
+0x2f2f, 0x6c62, 0x676f, 0x632e, 0x6473, 0x2e6e, 0x656e, 0x2f74, 0x656c, 
+0x7869, 0x6169, 0x686f, 0x6175, 0x3031, 0x3032, 0x2f3c, 0x464d, 0x4c43, 
+0x6e69, 0x5f6b, 0x7255, 0x3e6c, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 
+0x6c72, 0x7250, 0x6665, 0x7869, 0x3c3e, 0x4d2f, 0x4346, 0x694c, 0x6b6e, 
+0x555f, 0x6c72, 0x7250, 0x6665, 0x7869, 0x3c3e, 0x464d, 0x4c43, 0x6e69, 
+0x5f6b, 0x6f54, 0x6c6f, 0x6974, 0x3e70, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 
+0x5f6b, 0x6f54, 0x6c6f, 0x6974, 0x3e70, 0x4d3c, 0x4346, 0x694c, 0x6b6e, 
+0x465f, 0x6c75, 0x546c, 0x7865, 0x5474, 0x6f6f, 0x746c, 0x7069, 0x463e, 
+0x4c41, 0x4553, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 0x7546, 0x6c6c, 
+0x6554, 0x7478, 0x6f54, 0x6c6f, 0x6974, 0x3e70, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,3,0,0
+ PRODUCTVERSION 2,3,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080004e4"
+        BEGIN
+            VALUE "FileDescription", "YUV file viewer"
+            VALUE "FileVersion", "2.3.0.0"
+            VALUE "InternalName", "yuvplayer.exe"
+            VALUE "LegalCopyright", "Copyright Tae-young (c).  All rights reserved."
+            VALUE "OriginalFilename", "yuvplayer.exe"
+            VALUE "ProductName", "YUVplayer"
+            VALUE "ProductVersion", "2.3.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x800, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+OPEND                   BITMAP                  "res\\bitmap1.bmp"
+OPENU                   BITMAP                  "res\\bitmap2.bmp"
+FFORWARDU               BITMAP                  "res\\bitmap3.bmp"
+STOPD                   BITMAP                  "res\\bitmap4.bmp"
+STOPU                   BITMAP                  "res\\bitmap5.bmp"
+PLAYD                   BITMAP                  "res\\bitmap6.bmp"
+PLAYU                   BITMAP                  "res\\bitmap7.bmp"
+PAUSEU                  BITMAP                  "res\\bitmap8.bmp"
+PAUSED                  BITMAP                  "res\\bitmap9.bmp"
+FFORWARDD               BITMAP                  "res\\bitmap10.bmp"
+REWINDU                 BITMAP                  "res\\bitmap11.bmp"
+REWINDD                 BITMAP                  "res\\bitmap12.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\myicon.ico"
+#endif    // 英语(美国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#pragma code_page(949)
+#include "res\yuvplayer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

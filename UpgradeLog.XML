@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="yuvplayer">
+</Property><Property Name="解决方案文件" Value="D:\cdtworkspace\raw-yuvplayer\yuvplayer.sln">
+</Property><Property Name="Date" Value="2015年12月28日">
+</Property><Property Name="Time" Value="16:58">
+</Property></Properties><Event ErrorLevel="0" Project="yuvplayer" Source="yuvplayer\yuvplayer.vcproj" Description="Converting project file 'D:\cdtworkspace\raw-yuvplayer\yuvplayer\yuvplayer.vcproj'.">
+</Event><Event ErrorLevel="1" Project="yuvplayer" Source="yuvplayer\yuvplayer.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="yuvplayer" Source="yuvplayer\yuvplayer.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="yuvplayer" Source="yuvplayer\yuvplayer.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="yuvplayer" Source="yuvplayer\yuvplayer.vcproj" Description="Done converting to new project file 'D:\cdtworkspace\raw-yuvplayer\yuvplayer\yuvplayer.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="yuvplayer" Source="yuvplayer\yuvplayer.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="yuvplayer.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="yuvplayer.sln" Description="Converted">
+</Event></UpgradeLog>
